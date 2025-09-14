@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create Secure QR</h2>
+<form method="POST" action="{{ url_for('create') }}" enctype="multipart/form-data" class="card p-4 shadow">
+  <div class="mb-3">
+    <label class="form-label">Your Name</label>
+    <input type="text" name="name" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Set PIN</label>
+    <input type="password" name="pin" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Upload Files (multiple allowed)</label>
+    <input type="file" name="file" class="form-control" multiple required>
+  </div>
+  <button class="btn btn-primary">Generate QR</button>
+</form>
+{% endblock %}

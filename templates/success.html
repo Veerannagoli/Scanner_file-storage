@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Created</title>
+</head>
+<body>
+    <h1>QR Code Created Successfully!</h1>
+
+    <p>Scan this QR code to access your files:</p>
+    <img src="{{ url_for('static', filename=qr_image) }}" alt="QR Code" style="width:200px;"><br><br>
+
+    <p>Or share this link:</p>
+    <a href="{{ qr_url }}" target="_blank">{{ qr_url }}</a><br><br>
+
+    <a href="{{ url_for('home') }}">Create Another</a>
+</body>
+</html>

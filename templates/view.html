@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter PIN</title>
+</head>
+<body>
+    <h1>Enter PIN to Access Files</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul style="color:red;">
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('view', file_id=file_id) }}" method="POST">
+        <label>PIN:</label>
+        <input type="password" name="pin" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
